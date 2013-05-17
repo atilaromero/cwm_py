@@ -1,0 +1,33 @@
+#Processed by Id: cwm.py,v 1.198 2012-01-30 09:30:20 timbl Exp 
+        #    using base file:///home/atila.alr/Desktop/projetos/cwm/2000/10/swap/teste.n3
+             @prefix : <#> .
+    
+    :a     :r1 "1+2";
+         :r2 3;
+         :test1  (
+        "1+2" ) .
+    
+    :b     :r1 "10 20";
+         :r1b "[10L, 20L]";
+         :r2 "[10L, 20L]";
+         :r3 30;
+         :r4 30;
+         :test2  (
+        10
+        20 ) .
+    
+    :c     :r1 "All these worlds are yours except europa";
+         :r2  (
+        "ALL THESE WORLDS ARE YOURS"
+        "EXCEPT"
+        "EUROPA" );
+         :test3  (
+        "All these worlds are yours except europa" ) .
+    
+    :d     :r1 """total 16
+drwxrwxr-x  2 atila.alr atila.alr  4096 Mai  9 08:52 CVS
+drwxrwxr-x 26 atila.alr atila.alr 12288 Mai 17 17:18 swap
+""";
+         :r2 "myf called";
+         :test4 () .
+    
