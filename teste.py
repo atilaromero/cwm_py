@@ -9,3 +9,7 @@ def myf():
 
 def square(x):
     return x*x
+
+import subprocess
+def callExt(arglist):
+    return subprocess.Popen(arglist,stdout=subprocess.PIPE).communicate()[0]

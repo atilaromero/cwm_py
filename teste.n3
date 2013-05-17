@@ -1,53 +1,46 @@
 @prefix py: <python://#>.
 @prefix teste: <python://teste#>.
 
-:plus :eval ("1+2") .
-:plus2 :eval2 ("10+20") .
-#(<python://sys#version.upper> ) py:apply :up .
-#(<python://teste#myf> ) py:apply :myf .
-#:myp :apply (<python://teste#myprint> 1 [teste:square 10] 3 4 ).
-#:teste1 :apply (py:apply py:sum ((1 2 3))).
-#:teste2 py:sum (10 20 30) .
-#:teste3 :f3 (1 2 3).
-#(<python://#sum> ( 10 20 ) ) :call :var .
-#(<python://#sum> (1 2 3 4)) :call :a .
-#(<python://os#system> "ls -l ../"):call :ls .
+:a :test1 ("1+2") .
+:b :test2 (10 20) .
+:c :test3 ("All these worlds are yours except europa") .
+:d :test4 ().
 
-#:popen :is (<python://subprocess#Popen> ("ls" "-l" "../")).
-
-{?x :eval ?y.
-?z py:eval ?y .
+{?x :test1 ?y.
+?z1 teste:myprint ?y.
+?z2 py:eval ?y.
 }=>{
-?x = ?z.
+?x :r1 ?z1.
+?x :r2 ?z2.
 }.
 
-{?x :eval2 ?y.
-?z py:eval ?y .
+{?x :test2 ?y.
+?z1 teste:myprint ?y .
+?z1b teste:myprint (?y) .
+?z2 py:apply (<python://teste#myprint> (?y) ).
+?z3 py:apply (py:sum (?y)).
+?z4 py:sum (?y).
 }=>{
-?x = ?z.
+?x :r1 ?z1.
+?x :r1b ?z1b .
+?x :r2 ?z2.
+?x :r3 ?z3.
+?x :r4 ?z4.
 }.
 
-#{?x :f3 (?a ?b ?c).
-#?z2 py:apply (teste:square 20).
-#?z py:apply (teste:myprint ?a [py:apply (teste:square 1000)] ?b ?c ?z).
-#}=>{
-#?x=?z.
-#}.
+{?x :test3 (?y).
+?z1 teste:myprint (?y) .
+?z1b <python://#unicode.upper> (?z1) .
+?z2 <python://#unicode.rsplit> ( ?z1b " " 2 ) .
+}=>{
+?x :r1 ?z1.
+?x :r2 ?z2.
+}.
 
-#{?x teste:square ?y.
-#?z py:apply (teste:square ?y) .
-#}=>{
-#?x = ?z.
-#}.
-
-#{?x py:sum ?y.
-#?z py:apply (py:sum ?y).
-#}=>{
-#?x = ?z.
-#}.
-
-#{?x :apply ?y.
-#?z py:apply ?y.
-#}=>{
-#?x = ?z.
-#}.
+{?x :test4 ().
+?z1 teste:callExt (("ls" "-l" "../")) .
+?z2 teste:myf () .
+}=>{
+?x :r1 ?z1.
+?x :r2 ?z2.
+}.
