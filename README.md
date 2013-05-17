@@ -56,9 +56,9 @@ cwm_py.py --think --data teste.n3
 
     :d     :input ();
          :output """total 16
- drwxrwxr-x  2 atila.alr atila.alr  4096 Mai  9 08:52 CVS
- drwxrwxr-x 26 atila.alr atila.alr 12288 Mai 17 17:54 swap
- """ .
+    drwxrwxr-x  2 atila.alr atila.alr  4096 Mai  9 08:52 CVS
+    drwxrwxr-x 26 atila.alr atila.alr 12288 Mai 17 17:54 swap
+    """ .
 
 To "install" the extension, it should suffice to put cwm_py.py in the cwm.py folder.
 Then, to use it, call cwm_py.py like you would call cwm.
