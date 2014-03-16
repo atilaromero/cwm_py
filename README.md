@@ -1,7 +1,7 @@
 cwm_py
 ======
 
-CWM (Closed World Machine) extension. Adds support to "python://" URIs, as a hack to call python functions as if they were built-ins.
+CWM (Closed World Machine) extension. Adds support to "python://" URIs, as a way to call arbitrary python functions as if they were built-ins.
 
 When a URI like <python://mymodule#myfunction> is found in a rule,
 it imports the module and uses the function as a built-in.
