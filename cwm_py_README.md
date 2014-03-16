@@ -18,7 +18,7 @@ teste.n3:
         ?x :output ?z2.
     }.
 
-cwm_py.py --think --data teste.n3
+cwm_py --think --data teste.n3
 
      @prefix : <#> .
 
@@ -50,7 +50,7 @@ teste.n3:
         ?x :output ?z1.
     }.
 
-cwm_py.py --think --data teste.n3
+cwm_py --think --data teste.n3
 
      @prefix : <#> .
 
@@ -60,8 +60,8 @@ cwm_py.py --think --data teste.n3
     drwxrwxr-x 26 atila.alr atila.alr 12288 Mai 17 17:54 swap
     """ .
 
-To "install" the extension, it should suffice to put cwm_py.py in the cwm.py folder.
-Then, to use it, call cwm_py.py like you would call cwm.
+To "install" the extension, it should suffice to put cwm_py in the cwm folder.
+Then, to use it, call cwm_py like you would call cwm.
 Internally, all the extension does is to monkeypatch an internal function (so it understand "python://" URI)
 and then pass the ball to cwm.
 
