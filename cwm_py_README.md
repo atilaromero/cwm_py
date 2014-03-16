@@ -18,7 +18,7 @@ teste.n3:
         ?x :output ?z2.
     }.
 
-cwm_py --think --data teste.n3
+cwm_py teste.n3 --think --data
 
      @prefix : <#> .
 
@@ -50,7 +50,7 @@ teste.n3:
         ?x :output ?z1.
     }.
 
-cwm_py --think --data teste.n3
+cwm_py teste.n3 --think --data
 
      @prefix : <#> .
 
