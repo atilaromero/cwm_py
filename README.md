@@ -37,7 +37,7 @@ and use that function as a built-in:
 teste.py:
 
     import subprocess
-    def callExt(arglist):
+    def callExt(*arglist):
         return subprocess.Popen(arglist,stdout=subprocess.PIPE).communicate()[0]
 
 teste.n3:
@@ -45,7 +45,7 @@ teste.n3:
     @prefix teste: <python://teste#>.
     :d :input ().
     {?x :input ().
-        ?z1 teste:callExt (("ls" "-l" "../")) .
+        ?z1 teste:callExt ("ls" "-l" "../") .
     }=>{
         ?x :output ?z1.
     }.
